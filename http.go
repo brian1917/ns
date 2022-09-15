@@ -42,7 +42,7 @@ func (n *NetScaler) API(endpoint, action string, body []byte) (APIResp, error) {
 	// Make the HTTP request
 	resp, err := client.Do(req)
 	if err != nil {
-		return APIResp{StatusCode: resp.StatusCode}, fmt.Errorf("making http request - %s", err)
+		return APIResp{}, fmt.Errorf("making http request - %s", err)
 	}
 
 	// Process response
